@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Sidebar panel */
+.sidebar-panel {
+  @apply bg-white shadow-lg flex flex-col overflow-y-auto;
+  width: 300px;
+  min-width: 260px;
+  max-width: 320px;
+}
+
+/* Section cards */
+.panel-section {
+  @apply border-b border-gray-200 p-3;
+}
+
+.panel-section:last-child {
+  @apply border-b-0;
+}
+
+.panel-title {
+  @apply text-sm font-semibold text-gray-700 mb-2 flex items-center justify-between;
+}
+
+/* Legend color swatch */
+.legend-swatch {
+  @apply inline-block w-4 h-4 rounded mr-2 flex-shrink-0 border border-gray-300;
+}
+
+/* Style editor inputs */
+.style-input {
+  @apply block w-full text-sm border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-400;
+}
+
+.style-label {
+  @apply block text-xs font-medium text-gray-600 mb-1;
+}
+
+/* Drag-drop zone */
+.drop-zone {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-4 text-center cursor-pointer transition-colors;
+}
+
+.drop-zone.drag-over {
+  @apply border-blue-400 bg-blue-50;
+}
+
+/* Leaflet popup */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+}

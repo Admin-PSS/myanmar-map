@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR001", "ST": "Ayeyarwady", "TYPE": "Region" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[94.0,14.8],[97.2,14.8],[97.2,18.2],[94.0,18.2],[94.0,14.8]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR002", "ST": "Bago", "TYPE": "Region" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[95.5,17.0],[97.6,17.0],[97.6,19.5],[95.5,19.5],[95.5,17.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR003", "ST": "Chin", "TYPE": "State" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[92.5,21.0],[94.5,21.0],[94.5,24.0],[92.5,24.0],[92.5,21.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR004", "ST": "Kachin", "TYPE": "State" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[96.0,24.0],[98.5,24.0],[98.5,28.5],[96.0,28.5],[96.0,24.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR005", "ST": "Kayah", "TYPE": "State" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[97.0,18.5],[99.0,18.5],[99.0,20.0],[97.0,20.0],[97.0,18.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR006", "ST": "Kayin", "TYPE": "State" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[97.5,15.5],[99.2,15.5],[99.2,18.5],[97.5,18.5],[97.5,15.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR007", "ST": "Magway", "TYPE": "Region" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[93.5,19.0],[95.5,19.0],[95.5,22.0],[93.5,22.0],[93.5,19.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR008", "ST": "Mandalay", "TYPE": "Region" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[95.5,19.5],[97.5,19.5],[97.5,22.0],[95.5,22.0],[95.5,19.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR009", "ST": "Mon", "TYPE": "State" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[97.5,14.5],[98.6,14.5],[98.6,17.0],[97.5,17.0],[97.5,14.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR010", "ST": "Naypyidaw", "TYPE": "UT" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[95.8,18.5],[97.0,18.5],[97.0,20.5],[95.8,20.5],[95.8,18.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR011", "ST": "Rakhine", "TYPE": "State" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[92.0,17.0],[94.4,17.0],[94.4,23.0],[92.0,23.0],[92.0,17.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR012", "ST": "Sagaing", "TYPE": "Region" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[93.0,22.0],[97.0,22.0],[97.0,26.0],[93.0,26.0],[93.0,22.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR013", "ST": "Shan", "TYPE": "State" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[97.0,19.0],[101.5,19.0],[101.5,24.0],[97.0,24.0],[97.0,19.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR014", "ST": "Tanintharyi", "TYPE": "Region" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[97.5,9.5],[100.0,9.5],[100.0,14.5],[97.5,14.5],[97.5,9.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "PCODE": "MMR015", "ST": "Yangon", "TYPE": "Region" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[95.8,16.0],[97.0,16.0],[97.0,17.5],[95.8,17.5],[95.8,16.0]]]
+      }
+    }
+  ]
+}
