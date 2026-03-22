@@ -25,7 +25,7 @@ export const TOWN_TYPE_STYLES = {
 
 /** Lighten a hex color by `amount` (0-255) */
 export function lightenColor(hex, amount = 30) {
-  if (!hex || !hex.startsWith('#')) return hex || '#90A4AE'
+  if (!hex || !hex.startsWith('#')) return '#90A4AE'
   const num = parseInt(hex.replace('#', ''), 16)
   const r = Math.min(255, (num >> 16)         + amount)
   const g = Math.min(255, ((num >> 8) & 0xff) + amount)
