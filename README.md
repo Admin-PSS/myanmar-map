@@ -2,6 +2,10 @@
 
 An interactive, browser-based map of Myanmar built with React and Leaflet. Explore every State and Region, Township, and Town/City layer, apply custom colours and labels to any administrative unit, and import or export your styling data as CSV — all without a backend.
 
+🌐 **[Live Demo → https://Admin-PSS.github.io/myanmar-map/](https://Admin-PSS.github.io/myanmar-map/)**
+
+![Myanmar Interactive Map](public/image/myanmar-map.png)
+
 ---
 
 ## ✨ Features
