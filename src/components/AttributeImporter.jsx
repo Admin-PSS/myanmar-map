@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 
-export default function AttributeImporter({ loadFromCSV, loadFromText, validationMsg, onReset, onExport }) {
+export default function AttributeImporter({ loadFromCSV, loadFromText, validationMsg, onReset, onExport, sampleUrl = '/data/sample_attribute_data.csv' }) {
   const fileInputRef = useRef(null)
   const [dragOver, setDragOver] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -24,7 +24,7 @@ export default function AttributeImporter({ loadFromCSV, loadFromText, validatio
   const handleSample = async () => {
     setLoading(true)
     try {
-      const res = await fetch('/data/sample_attribute_data.csv')
+      const res = await fetch(sampleUrl)
       const text = await res.text()
       loadFromText(text)
     } catch {

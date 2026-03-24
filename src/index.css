@@ -61,3 +61,32 @@ html, body, #root {
 .leaflet-popup-content-wrapper {
   border-radius: 8px !important;
 }
+
+/* Permanent state name label via DivIcon */
+.state-label-icon {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+  text-align: center;
+}
+.state-label-icon span {
+  font-weight: 600;
+  font-size: 11px;
+  white-space: nowrap;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+}
+
+/* Hover tooltip — clean card */
+.state-hover-tooltip {
+  background: white !important;
+  border: 1px solid #ddd !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+  padding: 6px 10px !important;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.state-hover-tooltip::before {
+  display: none !important;
+}

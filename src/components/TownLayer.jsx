@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CircleMarker, Popup } from 'react-leaflet'
+import { CircleMarker, Tooltip } from 'react-leaflet'
 import { TOWN_TYPE_STYLES } from '../utils/colorUtils.js'
 
 export default function TownLayer({ styleMap, onFeatureClick }) {
@@ -21,8 +21,8 @@ export default function TownLayer({ styleMap, onFeatureClick }) {
   return geojson.features.map((feature) => {
     const props = feature.properties
     const [lng, lat] = feature.geometry.coordinates
-    const typeStyle = TOWN_TYPE_STYLES[props.TYPE] || TOWN_TYPE_STYLES.Village
-    const override = styleMap[props.PCODE] || {}
+    const typeStyle = TOWN_TYPE_STYLES[props.Level] || TOWN_TYPE_STYLES['Other Town']
+    const override = styleMap[props.Town_Pcode] || {}
 
     const fillColor = override.fillColor || typeStyle.color
     const borderColor = override.borderColor || '#ffffff'
@@ -30,7 +30,7 @@ export default function TownLayer({ styleMap, onFeatureClick }) {
 
     return (
       <CircleMarker
-        key={props.PCODE}
+        key={props.Town_Pcode}
         center={[lat, lng]}
         radius={radius}
         pathOptions={{
@@ -41,21 +41,13 @@ export default function TownLayer({ styleMap, onFeatureClick }) {
           opacity: 1,
         }}
         eventHandlers={{
-          click: () => onFeatureClick && onFeatureClick(props),
+          click: () => onFeatureClick && onFeatureClick({ ...props, PCODE: props.Town_Pcode }),
         }}
       >
-        <Popup>
-          <div className="text-sm">
-            <p className="font-semibold text-base">{props.NAME}</p>
-            <p className="text-gray-600">{props.TYPE}</p>
-            {props.POP && (
-              <p className="text-gray-500">
-                Population: {Number(props.POP).toLocaleString()}
-              </p>
-            )}
-            {props.PCODE && <p className="text-xs text-gray-400">{props.PCODE}</p>}
-          </div>
-        </Popup>
+        <Tooltip sticky className='state-hover-tooltip'>
+          <strong>{props.Town}</strong>
+          <br /><span style={{ fontSize: 11 }}>{props.Level} · {props.Township}</span>
+        </Tooltip>
       </CircleMarker>
     )
   })
