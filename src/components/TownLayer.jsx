@@ -7,7 +7,7 @@ export default function TownLayer({ styleMap, onFeatureClick }) {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('/data/myanmar_towns.geojson')
+    fetch(`${import.meta.env.BASE_URL}data/myanmar_towns.geojson`)
       .then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`)
         return r.json()

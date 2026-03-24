@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 
-export default function AttributeImporter({ loadFromCSV, loadFromText, validationMsg, onReset, onExport, sampleUrl = '/data/sample_attribute_data.csv' }) {
+export default function AttributeImporter({ loadFromCSV, loadFromText, validationMsg, onReset, onExport, sampleUrl }) {
   const fileInputRef = useRef(null)
   const [dragOver, setDragOver] = useState(false)
   const [loading, setLoading] = useState(false)

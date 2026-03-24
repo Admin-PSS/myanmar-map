@@ -149,7 +149,7 @@ export default function App() {
                   <AttributeImporter
                     loadFromCSV={loadFromCSV} loadFromText={loadFromText}
                     validationMsg={validationMsg} onReset={resetStyles} onExport={exportCSV}
-                    sampleUrl="/data/sample_attribute_data.csv"
+                    sampleUrl={`${import.meta.env.BASE_URL}data/sample_attribute_data.csv`}
                   />
                 )}
                 {!showImporter && validationMsg && <p className="text-xs text-green-700">{validationMsg}</p>}
@@ -188,7 +188,7 @@ export default function App() {
                   <AttributeImporter
                     loadFromCSV={loadFromCSV} loadFromText={loadFromText}
                     validationMsg={validationMsg} onReset={resetStyles} onExport={exportCSV}
-                    sampleUrl="/data/sample_township_data.csv"
+                    sampleUrl={`${import.meta.env.BASE_URL}data/sample_township_data.csv`}
                   />
                 )}
                 {!showImporter && validationMsg && <p className="text-xs text-green-700">{validationMsg}</p>}

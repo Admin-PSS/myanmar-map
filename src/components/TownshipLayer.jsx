@@ -12,7 +12,7 @@ export default function TownshipLayer({ styleMap, onFeatureClick, townshipLayerS
   const [geojson, setGeojson] = useState(null)
 
   useEffect(() => {
-    fetchGeoJSON('townships', '/data/myanmar_townships.geojson').then(setGeojson).catch(() => {})
+    fetchGeoJSON('townships', `${import.meta.env.BASE_URL}data/myanmar_townships.geojson`).then(setGeojson).catch(() => {})
   }, [])
 
   const clearLabels = () => {

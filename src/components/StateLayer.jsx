@@ -10,7 +10,7 @@ export default function StateLayer({ styleMap, onFeatureClick, stateLayerStyle =
   const [geojson, setGeojson] = useState(null)
 
   useEffect(() => {
-    fetchGeoJSON('states', '/data/myanmar_states.geojson').then(setGeojson).catch(() => {})
+    fetchGeoJSON('states', `${import.meta.env.BASE_URL}data/myanmar_states.geojson`).then(setGeojson).catch(() => {})
   }, [])
 
   const clearLabels = () => {
