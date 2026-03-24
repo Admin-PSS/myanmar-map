@@ -15,7 +15,10 @@ An interactive, browser-based map of Myanmar built with React and Leaflet. Explo
 | **Sample data** | Load a built-in sample dataset with one click to see the map styled right away |
 | **CSV export** | Download your current styling as a CSV file for reuse or sharing |
 | **Dynamic legend** | The sidebar legend updates automatically to reflect active layers and category colours |
-| **OpenStreetMap tiles** | Crisp base map tiles with full attribution |
+| **State filter** | Filter townships by State / Region with automatic map zoom |
+| **State border overlay** | Optional state border overlay on the Township map with customisable colour and width |
+| **Plain background toggle** | Switch between standard OpenStreetMap tiles and a plain CARTO basemap (no labels) |
+| **GeoJSON caching** | GeoJSON files are fetched once and cached in memory to avoid redundant network requests |
 
 ---
 
@@ -66,8 +69,12 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 🗺 Map Layers
 
-### States / Regions
-Myanmar's 15 top-level administrative divisions, each pre-coloured and labelled:
+### States / Regions *(State Map tab)*
+Myanmar's 15 top-level administrative divisions, each pre-coloured and labelled. Options include:
+- Toggle individual state colours on/off
+- Show/hide state name labels
+- Override global fill and border colour
+- Switch to a plain background basemap
 
 | P-Code | Name | | P-Code | Name |
 |---|---|---|---|---|
@@ -80,10 +87,13 @@ Myanmar's 15 top-level administrative divisions, each pre-coloured and labelled:
 | MMR007 | Magway | | MMR015 | Yangon |
 | MMR008 | Mandalay | | | |
 
-### Townships
-District-level township boundary polygons, styled with a neutral grey by default and fully customisable via the Style Editor.
+### Townships *(Township Map tab)*
+District-level township boundary polygons, styled with a neutral grey by default. Additional options:
+- **State Filter** — select a State / Region from a dropdown to zoom in and show only its townships
+- **Show township labels** — renders the township name on each polygon
+- **State Border Overlay** — draws state-level borders on top of the township layer with a customisable colour and line width
 
-### Towns & Cities
+### Towns & Cities *(Township Map tab)*
 Point layer (city/town/village markers) rendered as coloured circles:
 
 | Type | Colour |
@@ -110,7 +120,7 @@ You can import a CSV file to apply styling to multiple features at once. The fil
 | `CATEGORY` | | Category name for grouped legend colouring | `Coastal` |
 | `DESCRIPTION` | | Free-text notes | `Fertile delta region` |
 
-A sample CSV is included at [`public/data/sample_attribute_data.csv`](public/data/sample_attribute_data.csv). Click **Load Sample** in the sidebar to apply it instantly.
+A sample CSV for states is included at [`public/data/sample_attribute_data.csv`](public/data/sample_attribute_data.csv) and for townships at [`public/data/sample_township_data.csv`](public/data/sample_township_data.csv). Click **Load Sample** in the sidebar to apply the relevant one instantly.
 
 ---
 
@@ -120,28 +130,32 @@ A sample CSV is included at [`public/data/sample_attribute_data.csv`](public/dat
 myanmar-map/
 ├── public/
 │   └── data/
-│       ├── myanmar_states.geojson       # State/Region polygons
-│       ├── myanmar_townships.geojson    # Township polygons
-│       ├── myanmar_towns.geojson        # Town/City points
-│       └── sample_attribute_data.csv   # Built-in sample styling data
+│       ├── myanmar_states.geojson          # State/Region polygons
+│       ├── myanmar_townships.geojson       # Township polygons
+│       ├── myanmar_towns.geojson           # Town/City points
+│       ├── sample_attribute_data.csv       # Built-in sample styling data (states)
+│       ├── sample_township_data.csv        # Built-in sample styling data (townships)
+│       └── ps_sample_attribute_state.csv   # Additional state attribute sample
 ├── src/
 │   ├── components/
-│   │   ├── MapView.jsx          # Leaflet map container
-│   │   ├── StateLayer.jsx       # State/Region polygon layer
-│   │   ├── TownshipLayer.jsx    # Township polygon layer
-│   │   ├── TownLayer.jsx        # Town/City point layer
-│   │   ├── LayerControls.jsx    # Layer toggle checkboxes
-│   │   ├── Legend.jsx           # Dynamic map legend
-│   │   ├── StyleEditor.jsx      # Per-feature style editor panel
+│   │   ├── MapView.jsx           # Leaflet map container & basemap switcher
+│   │   ├── StateLayer.jsx        # State/Region polygon layer
+│   │   ├── TownshipLayer.jsx     # Township polygon layer with state filter
+│   │   ├── TownLayer.jsx         # Town/City point layer
+│   │   ├── StateBorderLayer.jsx  # State border overlay (used in Township map)
+│   │   ├── LayerControls.jsx     # Sidebar panels for State & Township tabs
+│   │   ├── Legend.jsx            # Dynamic map legend
+│   │   ├── StyleEditor.jsx       # Per-feature style editor panel
 │   │   └── AttributeImporter.jsx # CSV import / export controls
 │   ├── hooks/
-│   │   └── useAttributeData.js  # State management for CSV styling data
+│   │   └── useAttributeData.js   # State management for CSV styling data
 │   ├── utils/
-│   │   ├── colorUtils.js        # Default colours & category palette helpers
-│   │   └── csvParser.js         # CSV parsing, validation & export (PapaParse)
-│   ├── App.jsx                  # Root component & application layout
-│   ├── main.jsx                 # React entry point
-│   └── index.css                # Global styles (Tailwind base + custom classes)
+│   │   ├── colorUtils.js         # Default colours & category palette helpers
+│   │   ├── geojsonCache.js       # In-memory GeoJSON fetch cache
+│   │   └── csvParser.js          # CSV parsing, validation & export (PapaParse)
+│   ├── App.jsx                   # Root component & application layout
+│   ├── main.jsx                  # React entry point
+│   └── index.css                 # Global styles (Tailwind base + custom classes)
 ├── index.html
 ├── package.json
 ├── tailwind.config.js
