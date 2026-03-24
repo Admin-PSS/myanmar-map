@@ -1,0 +1,16 @@
+PCODE,NAME,FILL_COLOR,BORDER_COLOR,BORDER_WIDTH,LABEL,CATEGORY,LABEL_COLOR,DESCRIPTION
+MMR017,Ayeyarwady,#66BB6A,#2E7D32,2,Ayeyarwady,Coastal,#1B5E20,Fertile delta region along the Ayeyarwady River
+MMR111,Bago,#42A5F5,#1565C0,2,Bago,Development Zone,#0D47A1,Key transit hub between Yangon and central Myanmar
+MMR004,Chin,#BDBDBD,#616161,2,Chin,Highland,#424242,Remote highland state bordering India
+MMR001,Kachin,#26C6DA,#00838F,2,Kachin,Border Area,#006064,Large northern state rich in jade and amber
+MMR002,Kayah,#EC407A,#880E4F,2,Kayah,Highland,#880E4F,Smallest state known for Kayah culture and weaving
+MMR003,Kayin,#FF7043,#BF360C,2,Kayin,Border Area,#BF360C,Borders Thailand; known for teak forests
+MMR009,Magway,#FFA726,#E65100,2,Magway,Development Zone,#E65100,Oil and gas production region in central Myanmar
+MMR010,Mandalay,#AB47BC,#6A1B9A,2,Mandalay,Development Zone,#4A148C,Second largest city; cultural and commercial hub
+MMR011,Mon,#26A69A,#00695C,2,Mon,Coastal,#004D40,Historic Mon Kingdom; port city of Mawlamyine
+MMR018,Nay Pyi Taw,#26A69A,#B71C1C,2,Nay Pyi Taw,Development Zone,#B71C1C,Union Territory and capital of Myanmar
+MMR012,Rakhine,#26A69A,#4E342E,2,Rakhine,Coastal,#3E2723,Coastal state with ancient Mrauk-U capital ruins
+MMR005,Sagaing,#26A69A,#37474F,2,Sagaing,Border Area,#263238,Largest region sharing borders with India and China
+MMR222,Shan,#26A69A,#F57F17,2,Shan,Highland,#E65100,Largest state with diverse ethnic highland communities
+MMR006,Tanintharyi,#26A69A,#558B2F,2,Tanintharyi,Coastal,#33691E,Narrow coastal strip with islands and marine resources
+MMR013,Yangon,#26A69A,#283593,2,Yangon,Development Zone,#1A237E,Commercial capital and largest city of Myanmar
